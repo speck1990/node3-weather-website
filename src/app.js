@@ -30,21 +30,6 @@ app.get("", (req, res) => {
 	});
 });
 
-app.get("/about", (req, res) => {
-	res.render("about", {
-		title: "About Me",
-		name: "Stephen Peck"
-	});
-});
-
-app.get("/help", (req, res) => {
-	res.render("help", {
-		title: "Help",
-		name: "Stephen Peck",
-		helpText: "This is some helpful message"
-	});
-});
-
 app.get("/weather", (req, res) => {
 	if (!req.query.address) {
 		return res.send({
@@ -72,34 +57,6 @@ app.get("/weather", (req, res) => {
 				address: req.query.address
 			});
 		});
-	});
-});
-
-app.get("/products", (req, res) => {
-	if (!req.query.search) {
-		return res.send({
-			error: "You must a provide a search term"
-		});
-	}
-	console.log(req.query.search);
-	res.send({
-		products: []
-	});
-});
-
-app.get("/help/*", (req, res) => {
-	res.render("404", {
-		title: "404",
-		name: "Stephen Peck",
-		errorMessage: "Help article not found."
-	});
-});
-
-app.get("*", function(req, res) {
-	res.render("404", {
-		title: "404",
-		name: "Stephen Peck",
-		errorMessage: "Page not found"
 	});
 });
 
