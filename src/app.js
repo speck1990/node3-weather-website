@@ -3,10 +3,10 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
-const forecast = require("./utils/forecast.js");
-const geocode = require("./utils/geocode.js");
 
 const app = express();
+
+app.use(require("./routes/weather"));
 
 const port = process.env.PORT || 3000;
 
@@ -22,43 +22,6 @@ hbs.registerPartials(partialsPath);
 
 // Setup static direcotry to serve
 app.use(express.static(publicDirectoryPath));
-
-app.get("", (req, res) => {
-	res.render("index", {
-		title: "Weather",
-		name: "Stephen Peck"
-	});
-});
-
-app.get("/weather", (req, res) => {
-	if (!req.query.address) {
-		return res.send({
-			error: "You must provide an address!"
-		});
-	}
-
-	geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
-		if (error) {
-			return res.send({
-				error: error
-			});
-		}
-
-		forecast(latitude, longitude, (error, forecastData) => {
-			if (error) {
-				return res.send({
-					error: error
-				});
-			}
-
-			res.send({
-				forecast: forecastData,
-				location,
-				address: req.query.address
-			});
-		});
-	});
-});
 
 app.listen(port, () => {
 	console.log("Server is up on port " + port + ".");
