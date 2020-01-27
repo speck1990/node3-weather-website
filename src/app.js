@@ -1,5 +1,3 @@
-// WEATHER WEBSITE
-
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
@@ -23,6 +21,4 @@ hbs.registerPartials(partialsPath);
 // Setup static direcotry to serve
 app.use(express.static(publicDirectoryPath));
 
-app.listen(port, () => {
-	console.log("Server is up on port " + port + ".");
-});
+app.listen(port, () => console.log("Server is up on port " + port + "."));
