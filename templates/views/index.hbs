@@ -33,29 +33,34 @@
 
         </form>
 
-        <div class="row justify-content-center">
-            <div class="col-auto current-icon"><span id="current-icon"><i class="fas fa-cloud-rain"></i></span></div>
-            <div class="col-auto">
-                <h1 class="current-state mb-0"><span id="current-temperature">59</span>&deg <span
-                        id="current-state">Partly Cloudy</span></h1>
-                <p class="sub-temps">
-                    Feels Like: <span class="temp"><span id="apparent-temperature">59</span>&deg;</span>
-                    Low: <span class="temp"><span id="low-temperature">59</span>&deg;</span>
-                    High: <span class="temp"><span id="high-temperature">59</span>&deg;</span>
-                </p>
-            </div>
-        </div>
+        <p id="message-1"></p>
 
-        <div class="row justify-content-center mt-5">
-            <div class="col-auto">
-                <div class="btn-group mr-2" role="group" aria-label="Second group">
-                    <button type="button" class="btn btn-secondary">Hourly</button>
-                    <button type="button" class="btn btn-secondary">Weekly</button>
+        <div id="weather-details" class="invisible">
+
+            <div class="row justify-content-center">
+                <div class="col-auto current-icon"><span id="current-icon"><i class="fas fa-cloud-rain"></i></span>
+                </div>
+                <div class="col-auto">
+                    <h1 class="current-state mb-0"><span id="current-temperature">59</span>&deg <span
+                            id="current-state">Partly Cloudy</span></h1>
+                    <p class="sub-temps">
+                        Feels Like: <span class="temp"><span id="apparent-temperature">59</span>&deg;</span>
+                        Low: <span class="temp"><span id="low-temperature">59</span>&deg;</span>
+                        High: <span class="temp"><span id="high-temperature">59</span>&deg;</span>
+                    </p>
                 </div>
             </div>
-        </div>
 
-        <p id="message-1"></p>
+            <div class="row justify-content-center mt-5">
+                <div class="col-auto">
+                    <div class="btn-group mr-2" role="group" aria-label="Second group">
+                        <button type="button" class="btn btn-secondary">Hourly</button>
+                        <button type="button" class="btn btn-secondary">Weekly</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
