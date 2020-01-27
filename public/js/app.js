@@ -2,6 +2,7 @@ const weatherForm = document.querySelector("form");
 const search = document.querySelector("input#location");
 const currentLocation = document.querySelector("button#button-current");
 const messageOne = document.querySelector("#message-1");
+const weatherDetails = document.querySelector("#weather-details");
 
 const currentIcon = document.querySelector("#current-icon");
 const currentTemperature = document.querySelector("#current-temperature");
@@ -62,6 +63,8 @@ weatherForm.addEventListener("submit", e => {
 				lowTemperature.textContent = Math.floor(data.forecast.daily.data[0].temperatureLow);
 				highTemperature.textContent = Math.round(data.forecast.daily.data[0].temperatureHigh);
 				messageOne.textContent = "";
+
+				weatherDetails.classList.remove("invisible");
 			}
 		});
 	});
