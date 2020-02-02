@@ -16,23 +16,23 @@ const highTemperature = document.querySelector("#high-temperature");
 
 messageOne.textContent = "";
 
-currentLocation.addEventListener("click", e => {
-	if (!navigator.geolocation) {
-		// no geolocation
-	} else {
-		navigator.geolocation.getCurrentPosition(
-			position => {
-				const latitude = position.coords.latitude;
-				const longitude = position.coords.longitude;
+// currentLocation.addEventListener("click", e => {
+// 	if (!navigator.geolocation) {
+// 		// no geolocation
+// 	} else {
+// 		navigator.geolocation.getCurrentPosition(
+// 			position => {
+// 				const latitude = position.coords.latitude;
+// 				const longitude = position.coords.longitude;
 
-				search.value = latitude + ", " + longitude;
-			},
-			error => {
-				console.log(error);
-			}
-		);
-	}
-});
+// 				search.value = latitude + ", " + longitude;
+// 			},
+// 			error => {
+// 				console.log(error);
+// 			}
+// 		);
+// 	}
+// });
 
 weatherForm.addEventListener("submit", e => {
 	e.preventDefault();
